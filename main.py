@@ -152,7 +152,7 @@ async def send_async_email(recipient: str, code: str, app_name: str):
         try:
             response = await client.post(url, json=payload, headers=headers)
             # Checked status verification fix applied below:
-            if response.status_code not in:
+            if response.status_code < 200 or resonse.status_code > 200:
                 err_msg = f"HTTP Email API error: {response.text}"
                 logger.error(err_msg)
                 await metrics.log_error("/api/v1/otp/request", err_msg)
