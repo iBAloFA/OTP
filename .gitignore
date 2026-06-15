@@ -1,0 +1,13 @@
+# Ignore the Python virtual environment
+venv/
+.venv/
+env/
+
+# Ignore Python compiled bytecode caches
+**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore local configuration files holding sensitive keys
+.env
